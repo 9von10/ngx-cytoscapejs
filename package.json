@@ -15,10 +15,12 @@
   "scripts": {
     "prepare": "husky install",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "start": "npm run start:demo",
+    "start:demo": "ng serve demo-app",
+    "start:lib": "ng build ngx-cytoscapejs --watch",
+    "build": "ng build ngx-cytoscapejs",
+    "test": "ng test ngx-cytoscapejs --source-map false",
+    "test:ci": "ng test ngx-cytoscapejs --code-coverage --source-map true --progress false --watch false",
     "lint": "ng lint",
     "format": "pretty-quick --staged",
     "release": "standard-version --no-verify"
