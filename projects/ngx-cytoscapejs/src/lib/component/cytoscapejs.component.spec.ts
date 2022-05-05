@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxCytoscapejsComponent } from './ngx-cytoscapejs.component';
+import { CytoscapejsComponent } from './cytoscapejs.component';
 
-describe('NgxCytoscapejsComponent', () => {
-  let component: NgxCytoscapejsComponent;
-  let fixture: ComponentFixture<NgxCytoscapejsComponent>;
+describe('CytoscapejsComponent', () => {
+  let component: CytoscapejsComponent;
+  let fixture: ComponentFixture<CytoscapejsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgxCytoscapejsComponent],
+      declarations: [CytoscapejsComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxCytoscapejsComponent);
+    fixture = TestBed.createComponent(CytoscapejsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
