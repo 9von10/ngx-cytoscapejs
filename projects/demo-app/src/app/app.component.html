@@ -1,8 +1,14 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-4"></div>
+    <div class="col-4 border-end border-primary">
+      <div class="mt-5">
+        <button type="button" class="btn btn-primary" (click)="renderCytoscapeGraph()">
+          Render Cytoscape.js graph
+        </button>
+      </div>
+    </div>
     <div class="col-8 full-height">
-      <cytoscapejs></cytoscapejs>
+      <cytoscapejs [cyOptions]="cyOptions"></cytoscapejs>
     </div>
   </div>
 </div>
