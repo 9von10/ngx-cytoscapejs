@@ -9,7 +9,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import cytoscape from 'cytoscape';
+import cytoscape, { Core, CytoscapeOptions } from 'cytoscape';
 import { isEqual } from 'lodash';
 
 @Component({
@@ -18,15 +18,15 @@ import { isEqual } from 'lodash';
   styleUrls: ['./cytoscapejs.component.scss'],
 })
 export class CytoscapejsComponent implements AfterViewInit, OnChanges {
-  @Input() cyOptions!: cytoscape.CytoscapeOptions;
+  @Input() cytoscapeOptions!: CytoscapeOptions;
 
-  @Output() cyCoreChanged: EventEmitter<cytoscape.Core> = new EventEmitter<cytoscape.Core>();
+  @Output() coreChanged: EventEmitter<Core> = new EventEmitter<Core>();
 
   @ViewChild('cy') cyElementRef!: ElementRef;
 
   private isVisible = false;
 
-  private cyCore!: cytoscape.Core;
+  private core!: Core;
 
   ngAfterViewInit(): void {
     this.isVisible = true;
@@ -34,21 +34,27 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const { cyOptions } = changes;
+    const { cytoscapeOptions } = changes;
 
-    if (cyOptions && !isEqual(cyOptions.previousValue, cyOptions.currentValue)) {
+    if (
+      cytoscapeOptions &&
+      !isEqual(cytoscapeOptions.previousValue, cytoscapeOptions.currentValue)
+    ) {
       this.render();
     }
   }
 
-  getCyCore(): cytoscape.Core {
-    return this.cyCore;
+  getCyCore(): Core {
+    return this.core;
   }
 
   private render(): void {
-    if (this.isVisible && this.cyOptions) {
-      this.cyCore = cytoscape({ ...this.cyOptions, container: this.cyElementRef.nativeElement });
-      this.cyCoreChanged.emit(this.cyCore);
+    if (this.isVisible && this.cytoscapeOptions) {
+      this.core = cytoscape({
+        ...this.cytoscapeOptions,
+        container: this.cyElementRef.nativeElement,
+      });
+      this.coreChanged.emit(this.core);
     }
   }
 }

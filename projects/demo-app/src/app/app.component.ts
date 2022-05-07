@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import cytoscape from 'cytoscape';
+import { CytoscapeOptions } from 'cytoscape';
 import { AppService } from './app.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  cyOptions!: cytoscape.CytoscapeOptions;
+  cytoscapeOptions!: CytoscapeOptions;
 
   constructor(private appService: AppService) {}
 
   renderCytoscapeGraph(): void {
     this.appService.getCyData().subscribe((data) => {
-      this.cyOptions = data;
+      this.cytoscapeOptions = data;
     });
   }
 }
