@@ -7,6 +7,7 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Usage](#usage)
+- [API](#api)
 - [Getting help](#getting-help)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -46,8 +47,27 @@ export class AppModule {}
 Add the cytoscapejs directive to your HTML:
 
 ```html
-<cytoscapejs [cyOptions]="cyOptions"></cytoscapejs>
+<cytoscapejs [cytoscapeOptions]="cytoscapeOptions"></cytoscapejs>
 ```
+
+The component will take up 100% of the parent's height and width. Also it will rerender the graph if you change the `cytoscapeOptions` input.
+
+## API
+
+All inputs except for the `cytoscapeOptions` are optional.
+
+### Inputs
+
+| Name               | Type             | Default | Description                                                                                                                              |
+| ------------------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `cytoscapeOptions` | CytoscapeOptions |         | Your graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element. |
+| `autoFit`          | boolean          | true    | When set to true the graph will be fit every time the browser window is resized.                                                         |
+
+### Outputs
+
+| Name          | Type | Description                                    |
+| ------------- | ---- | ---------------------------------------------- |
+| `coreChanged` | Core | Emits a Core every time a new core is created. |
 
 ## Getting help
 
@@ -56,7 +76,7 @@ If you have questions, concerns, bug reports, etc., please file an issue in [thi
 ## Roadmap
 
 - [x] Render [Cytoscape.js](https://js.cytoscape.org/) object
-- [ ] Option to fit graph on window resize
+- [x] Option to fit graph on window resize
 - [ ] Render [CX](https://home.ndexbio.org/data-model/) object
 - [ ] Unit tests
 - [ ] Documentation
