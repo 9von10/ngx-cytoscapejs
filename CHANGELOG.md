@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.2.0...v0.3.0) (2022-05-08)
+
+
+### Features
+
+* add CX graph rendering ([e3d6cb2](https://github.com/9von10/ngx-cytoscapejs/commit/e3d6cb2274c3cc6973793215165ffbce114e60aa))
+
 ## [0.2.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.1.0...v0.2.0) (2022-05-08)
 
 
