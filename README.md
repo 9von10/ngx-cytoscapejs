@@ -2,6 +2,10 @@
 
 This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be used from any Angular 13+ application.
 
+- Rendering of [Cytoscape.js](https://js.cytoscape.org/) and [CX](https://home.ndexbio.org/data-model/) graphs
+- Automatic rerendering on graph data changes
+- Automatic graph size adjustment on window resize
+
 ## Table of contents
 
 - [Dependencies](#dependencies)
@@ -15,11 +19,11 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 
 ## Dependencies
 
-ngx-cytoscapejs depends on [Angular](https://angular.io/) and [Cytoscape.js](https://js.cytoscape.org/).
+ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https://js.cytoscape.org/), [lodash](https://lodash.com/), [cx2js](https://github.com/cytoscape/cx2js) and [cxVizConverter](https://github.com/cytoscape/cx-viz-converter).
 
-| ngx-cytoscapejs | Angular | Cytoscape.js |
-| --------------- | ------- | ------------ |
-| 0.1.0           | 13.x.x  | 3.x.x        |
+| ngx-cytoscapejs | Angular | Cytoscape.js | lodash | cx2js | cxVizConverter |
+| --------------- | ------- | ------------ | ------ | ----- | -------------- |
+| 0.3.0           | 13.x.x  | 3.x.x        | 4.x.x  | 0.6.x | 0.1.x          |
 
 ## Installation
 
@@ -44,24 +48,47 @@ import { CytoscapejsModule } from 'ngx-cytoscapejs';
 export class AppModule {}
 ```
 
-Add the cytoscapejs directive to your HTML:
+Add the cytoscapejs directive to your component's HTML:
 
 ```html
-<cytoscapejs [cytoscapeOptions]="cytoscapeOptions"></cytoscapejs>
+<cytoscapejs
+  [cytoscapeOptions]="cytoscapeOptions"
+  [autoFit]="autoFit"
+  (coreChanged)="coreChanged($event)"
+></cytoscapejs>
 ```
 
-The component will take up 100% of the parent's height and width. Also it will rerender the graph if you change the `cytoscapeOptions` input.
+Configure the directive in your component:
+
+```tsx
+import { Core, CytoscapeOptions } from 'cytoscape';
+import { CxConverter } from 'ngx-cytoscapejs';
+
+export class AppComponent {
+  cytoscapeOptions: CytoscapeOptions = {...};
+
+  autoFit: boolean = true;
+
+  coreChanged(core: Core): void {
+    // do something with the core
+  }
+}
+```
+
+The component will take up 100% of the parent's height and width.
 
 ## API
 
-All inputs except for the `cytoscapeOptions` are optional.
+For a graph to render you have to provide either `cytoscapeOptions` or `cxData`. The remaining inputs are optional.
 
 ### Inputs
 
-| Name               | Type             | Default | Description                                                                                                                              |
-| ------------------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `cytoscapeOptions` | CytoscapeOptions |         | Your graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element. |
-| `autoFit`          | boolean          | true    | When set to true the graph will be fit every time the browser window is resized.                                                         |
+| Name               | Type             | Default                 | Description                                                                                                                                                                                      |
+| ------------------ | ---------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cytoscapeOptions` | CytoscapeOptions |                         | Your Cytoscape graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element.                                               |
+| `autoFit`          | boolean          | true                    | When set to true the graph will be fit every time the browser window is resized.                                                                                                                 |
+| `cxData`           | any              |                         | Your CX graph data. The data is converted using the the converters provided in the `cxConverters` input.                                                                                         |
+| `cxConverters`     | CxConverter[]    | [cx2js, cxVizConverter] | Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result. |
 
 ### Outputs
 
@@ -69,18 +96,24 @@ All inputs except for the `cytoscapeOptions` are optional.
 | ------------- | ---- | ---------------------------------------------- |
 | `coreChanged` | Core | Emits a Core every time a new core is created. |
 
+### Enums
+
+#### CxConverter
+
+| Value          | Description                          |
+| -------------- | ------------------------------------ |
+| cx2js          | Use cx2js for CX conversion          |
+| cxVizConverter | Use cxVizConverter for CX conversion |
+
 ## Getting help
 
 If you have questions, concerns, bug reports, etc., please file an issue in [this repository's Issue Tracker](https://github.com/9von10/ngx-cytoscapejs/issues).
 
 ## Roadmap
 
-- [x] Render [Cytoscape.js](https://js.cytoscape.org/) object
-- [x] Option to fit graph on window resize
-- [ ] Render [CX](https://home.ndexbio.org/data-model/) object
-- [ ] Unit tests
-- [ ] Documentation
 - [ ] Publish NPM package
+- [ ] Documentation
+- [ ] Unit tests
 - [ ] Angular CLI schematics
 
 ## License
@@ -91,3 +124,5 @@ If you have questions, concerns, bug reports, etc., please file an issue in [thi
 
 - [Cytoscape.js](https://js.cytoscape.org/)
 - [ngx-cytoscape](https://github.com/calvinvette/ngx-cytoscape)
+- [cytoscape-cx2js](https://github.com/cytoscape/cx2js)
+- [cxVizConverter](https://github.com/cytoscape/cx-viz-converter)
