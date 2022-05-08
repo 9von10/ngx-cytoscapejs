@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.1.0...v0.2.0) (2022-05-08)
+
+
+### Features
+
+* add deactivatable graph fitting on window resize ([5b2e39a](https://github.com/9von10/ngx-cytoscapejs/commit/5b2e39afaa7515000438693fdc0a997572f52c89))
+
 ## 0.1.0 (2022-05-06)
 
 
