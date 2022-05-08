@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { CytoscapejsModule } from 'ngx-cytoscapejs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CytoscapejsModule } from 'ngx-cytoscapejs';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

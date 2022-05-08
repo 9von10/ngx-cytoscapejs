@@ -1,0 +1,489 @@
+[
+  {
+    "CXVersion": "2.0.0"
+  },
+  {
+    "metaData": [
+      {
+        "elementCount": 1,
+        "name": "attributeDeclarations"
+      },
+      {
+        "elementCount": 6,
+        "name": "nodes"
+      },
+      {
+        "elementCount": 1,
+        "name": "networkAttributes"
+      },
+      {
+        "elementCount": 6,
+        "name": "edges"
+      },
+      {
+        "elementCount": 7,
+        "name": "visualProperties"
+      }
+    ]
+  },
+  {
+    "attributeDeclarations": [
+      {
+        "edges": {
+          "interaction": {
+            "v": "interact with"
+          }
+        },
+        "nodes": {
+          "Size": {
+            "d": "integer"
+          },
+          "annot_source": {
+            "a": "a1"
+          },
+          "name": {
+            "a": "n"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "nodes": [
+      {
+        "id": 115,
+        "v": {
+          "Size": 11,
+          "a1": "novel",
+          "align_fdr": -1,
+          "align_score": -1,
+          "annot": "COMP:753",
+          "cc_overlap": "6/61;6/115;5/60;8/619;3/21;5/297;3/30;2/8;2/19;2/21;2/24;3/408",
+          "genes": "DHX15,SNRPC,SNRPB2,CDC40,SNRNP70,SRRM1,CCDC12,GEMIN4,CD2BP2,SNRPA1,GEMIN7,",
+          "jaccard": -1,
+          "n": "753",
+          "overlap": "None"
+        },
+        "x": 193.35932771937667,
+        "y": -287.25515529706604
+      },
+      {
+        "id": 137,
+        "v": {
+          "Size": 6,
+          "a1": "novel",
+          "align_fdr": -1,
+          "align_score": -1,
+          "annot": "COMP:737",
+          "cc_overlap": "4/61;4/115;3/21;3/60;2/8;4/619;2/24",
+          "genes": "DHX15,SNRPC,SNRPB2,SNRNP70,CCDC12,GEMIN7,",
+          "jaccard": -1,
+          "n": "737",
+          "overlap": "None"
+        },
+        "x": 326.15462133852697,
+        "y": -295.3667175710825
+      },
+      {
+        "id": 124,
+        "v": {
+          "Size": 8,
+          "align_fdr": 0.004,
+          "align_goID": "GO:0071013",
+          "align_score": 0.25474,
+          "annot": "catalytic step 2 spliceosome",
+          "annot_source": "CC",
+          "cc_overlap": "5/61;4/30;5/115;3/21;3/60;2/21;4/619;3/408",
+          "genes": "SNRPB2,CDC40,NAA38,RNPC3,EXO1,CCDC12,DHX8,SNRPA1,",
+          "jaccard": 0.3076923077,
+          "n": "747",
+          "overlap": "4/9"
+        },
+        "x": 173.69852672302636,
+        "y": -347.7649365389975
+      },
+      {
+        "id": 123,
+        "v": {
+          "Size": 4,
+          "a1": "CC",
+          "align_fdr": 0,
+          "align_goID": "GO:0071007",
+          "align_score": 0.459948,
+          "annot": "U2-type catalytic step 2 spliceosome",
+          "cc_overlap": "3/30;3/61;3/115;2/21;2/60",
+          "genes": "SNRPB2,CDC40,CCDC12,SNRPA1,",
+          "jaccard": 0.5,
+          "n": "721",
+          "overlap": "3/5"
+        },
+        "x": 299.8616030219418,
+        "y": -366.0878683881494
+      },
+      {
+        "id": 119,
+        "v": {
+          "Size": 9,
+          "align_fdr": -1,
+          "align_score": -1,
+          "annot": "COMP:751",
+          "annot_source": "novel",
+          "cc_overlap": "4/61;4/115;3/21;3/60;2/8;4/619;2/24",
+          "genes": "DHX15,SNRPC,SNRPB2,CDC40,SNRNP70,SRRM1,CCDC12,SNRPA1,GEMIN7,",
+          "jaccard": -1,
+          "n": "751",
+          "overlap": "None"
+        },
+        "x": 256.8421551008104,
+        "y": -292.45574205548394
+      },
+      {
+        "id": 103,
+        "v": {
+          "Size": 19,
+          "align_fdr": -1,
+          "align_score": -1,
+          "annot": "COMP:764",
+          "annot_source": "novel",
+          "cc_overlap": "10/61;9/115;13/619;7/60;5/30;4/21;4/21;4/24;7/297;3/19;3/19;6/408;3/35;2/8;2/23;3/132;2/28;3/154",
+          "genes": "SRRM2,DHX15,COIL,SNRPC,SNRPB2,CDC40,NAA38,RNPC3,SNRNP70,SRSF10,SRRM1,EXO1,CCDC12,DHX8,GEMIN4,CD2BP2,SNRPA1,GEMIN7,SF3A2,",
+          "jaccard": -1,
+          "n": "764",
+          "overlap": "None"
+        },
+        "x": 123.14439668294953,
+        "y": -297.131767510978
+      }
+    ]
+  },
+  {
+    "edges": [
+      {
+        "id": 239,
+        "s": 115,
+        "t": 119,
+        "v": {
+          "Is_Tree_Edge": "Tree"
+        }
+      },
+      {
+        "id": 248,
+        "s": 124,
+        "t": 123,
+        "v": {
+          "Is_Tree_Edge": "Tree"
+        }
+      },
+      {
+        "id": 245,
+        "s": 119,
+        "t": 123,
+        "v": {
+          "Is_Tree_Edge": "Not_Tree"
+        }
+      },
+      {
+        "id": 244,
+        "s": 119,
+        "t": 137,
+        "v": {
+          "Is_Tree_Edge": "Tree"
+        }
+      },
+      {
+        "id": 223,
+        "s": 103,
+        "t": 124,
+        "v": {
+          "Is_Tree_Edge": "Tree"
+        }
+      },
+      {
+        "id": 222,
+        "s": 103,
+        "t": 115,
+        "v": {
+          "Is_Tree_Edge": "Tree"
+        }
+      }
+    ]
+  },
+  {
+    "networkAttributes": [
+      {
+        "name": "DLoc Hierarchy demo"
+      }
+    ]
+  },
+  {
+    "visualProperties": [
+      {
+        "default": {
+          "edge": {
+            "EDGE_CURVED": "true",
+            "EDGE_LABEL_COLOR": "#000000",
+            "EDGE_LABEL_FONT_FACE": "Dialog,plain,10",
+            "EDGE_LABEL_FONT_SIZE": 10,
+            "EDGE_LABEL_OPACITY": 1,
+            "EDGE_LABEL_WIDTH": "200.0",
+            "EDGE_LINE_TYPE": "SOLID",
+            "EDGE_LINE_COLOR": "#323232",
+            "EDGE_SELECTED": "false",
+            "EDGE_SELECTED_PAINT": "#FF0000",
+            "EDGE_SOURCE_ARROW_SELECTED_PAINT": "#FFFF00",
+            "EDGE_SOURCE_ARROW_SHAPE": "DELTA",
+            "EDGE_SOURCE_ARROW_SIZE": "6.0",
+            "EDGE_SOURCE_ARROW_UNSELECTED_PAINT": "#666666",
+            "EDGE_STROKE_SELECTED_PAINT": "#FF0000",
+            "EDGE_STROKE_UNSELECTED_PAINT": "#666666",
+            "EDGE_TARGET_ARROW_SELECTED_PAINT": "#FFFF00",
+            "EDGE_TARGET_ARROW_SHAPE": "NONE",
+            "EDGE_TARGET_ARROW_SIZE": "6.0",
+            "EDGE_TARGET_ARROW_UNSELECTED_PAINT": "#000000",
+            "EDGE_OPACITY": 1,
+            "EDGE_UNSELECTED_PAINT": "#404040",
+            "EDGE_VISIBLE": "true",
+            "EDGE_WIDTH": 2,
+            "arrowColorMatchesEdge": "false"
+          },
+          "network": {
+            "NETWORK_BACKGROUND_COLOR": "#FFFFFF"
+          },
+          "node": {
+            "NODE_BORDER_PAINT": "#CCCCCC",
+            "NODE_BORDER_STROKE": "SOLID",
+            "NODE_BORDER_TRANSPARENCY": "255",
+            "NODE_BORDER_WIDTH": "0.0",
+            "NODE_DEPTH": "0.0",
+            "NODE_BACKGROUND_COLOR": "#89D0F5",
+            "NODE_BACKGROUND_OPACITY": 1,
+            "NODE_HEIGHT": 35,
+            "NODE_LABEL_COLOR": "#000000",
+            "NODE_LABEL_FONT_FACE": "SansSerif,plain,12",
+            "NODE_LABEL_FONT_SIZE": 12,
+            "NODE_LABEL_POSITION": "C,C,c,0.00,0.00",
+            "NODE_LABEL_OPACITY": 1,
+            "NODE_LABEL_WIDTH": "200.0",
+            "NODE_NESTED_NETWORK_IMAGE_VISIBLE": "true",
+            "NODE_PAINT": "#1E90FF",
+            "NODE_SELECTED": "false",
+            "NODE_SELECTED_PAINT": "#FFFF00",
+            "NODE_SHAPE": "ellipse",
+            "NODE_VISIBLE": "true",
+            "NODE_WIDTH": 35,
+            "NODE_X_LOCATION": "0.0",
+            "NODE_Y_LOCATION": "0.0",
+            "NODE_Z_LOCATION": "0.0",
+            "nodeCustomGraphicsSizeSync": "true"
+          }
+        },
+        "edgeMapping": {
+          "EDGE_CURVE_STYLE": {
+            "definition": {
+              "attribute": "Is_Tree_Edge",
+              "map": [
+                {
+                  "v": "Tree",
+                  "vp": false
+                },
+                {
+                  "v": "Not_Tree",
+                  "vp": true
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          },
+          "EDGE_SOURCE_ARROW_UNSELECTED_PAINT": {
+            "definition": {
+              "attribute": "Is_Tree_Edge",
+              "map": [
+                {
+                  "v": "Tree",
+                  "vp": "#666666"
+                },
+                {
+                  "v": "Not_Tree",
+                  "vp": "#CCCCCC"
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          },
+          "EDGE_STROKE_UNSELECTED_PAINT": {
+            "definition": {
+              "attribute": "Is_Tree_Edge",
+              "map": [
+                {
+                  "v": "Tree",
+                  "vp": "#666666"
+                },
+                {
+                  "v": "Not_Tree",
+                  "vp": "#CCCCCC"
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          }
+        },
+        "nodeMapping": {
+          "NODE_BACKGROUND_COLOR": {
+            "definition": {
+              "attribute": "annot_source",
+              "map": [
+                {
+                  "v": "CC",
+                  "vp": "#CCFFFF"
+                },
+                {
+                  "v": "HPA",
+                  "vp": "#CCFFCC"
+                },
+                {
+                  "v": "novel",
+                  "vp": "#FFCCCC"
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          },
+          "NODE_LABEL": {
+            "definition": {
+              "attribute": "annot"
+            },
+            "type": "PASSTHROUGH"
+          },
+          "NODE_LABEL_FONT_SIZE": {
+            "definition": {
+              "attribute": "Size",
+              "map": [
+                {
+                  "includeMax": true,
+                  "includeMin": true,
+                  "max": 195,
+                  "maxVPValue": 45,
+                  "min": 3,
+                  "minVPValue": 7
+                },
+                {
+                  "includeMax": true,
+                  "includeMin": true,
+                  "max": 661,
+                  "maxVPValue": 47,
+                  "min": 195,
+                  "minVPValue": 45
+                }
+              ]
+            },
+            "type": "CONTINUOUS"
+          },
+          "NODE_WIDTH": {
+            "definition": {
+              "attribute": "Size",
+              "map": [
+                {
+                  "v": 4,
+                  "vp": 20
+                },
+                {
+                  "v": 6,
+                  "vp": 20
+                },
+                {
+                  "v": 8,
+                  "vp": 20
+                },
+                {
+                  "v": 9,
+                  "vp": 20
+                },
+                {
+                  "v": 11,
+                  "vp": 35
+                },
+                {
+                  "v": 19,
+                  "vp": 35
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          },
+          "NODE_HEIGHT": {
+            "definition": {
+              "attribute": "Size",
+              "map": [
+                {
+                  "v": 4,
+                  "vp": 20
+                },
+                {
+                  "v": 6,
+                  "vp": 20
+                },
+                {
+                  "v": 8,
+                  "vp": 20
+                },
+                {
+                  "v": 9,
+                  "vp": 20
+                },
+                {
+                  "v": 11,
+                  "vp": 35
+                },
+                {
+                  "v": 19,
+                  "vp": 35
+                }
+              ]
+            },
+            "type": "DISCRETE"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "edgeBypasses": [
+      {
+        "id": 245,
+        "v": {
+          "EDGE_BEND": [0.8534737565017845, 0.5211358239103628, 0.6999978351246443]
+        }
+      }
+    ]
+  },
+  {
+    "nodeBypasses": [
+      {
+        "id": 137,
+        "v": {
+          "NODE_LABEL_OPACITY": 0.5
+        }
+      },
+      {
+        "id": 115,
+        "v": {
+          "NODE_LABEL_POSITION": "C,C,c,0.25,7.65"
+        }
+      },
+      {
+        "id": 119,
+        "v": {
+          "NODE_LABEL_POSITION": "C,C,c,0.25,10.86"
+        }
+      }
+    ]
+  },
+  {
+    "status": [
+      {
+        "error": "",
+        "success": true
+      }
+    ]
+  }
+]

@@ -10,6 +10,18 @@
           </div>
         </div>
 
+        <div class="card mb-3">
+          <div class="card-body">
+            <button type="button" class="btn btn-primary me-1" (click)="renderCx1Graph()">
+              Render CX1 graph
+            </button>
+
+            <button type="button" class="btn btn-primary" (click)="renderCx2Graph()">
+              Render CX2 graph
+            </button>
+          </div>
+        </div>
+
         <div class="card">
           <div class="card-body">
             <div class="form-check form-switch">
@@ -30,8 +42,10 @@
     </div>
     <div class="col-8 full-height">
       <cytoscapejs
-        [cytoscapeOptions]="cytoscapeOptions"
+        [cytoscapeOptions]="cytoscapeOptions!"
         [autoFit]="autoFit"
+        [cxData]="cxData"
+        [cxConverters]="cxConverters"
         (coreChanged)="coreChanged($event)"
       ></cytoscapejs>
     </div>

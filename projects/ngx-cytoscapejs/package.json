@@ -15,7 +15,9 @@
   "peerDependencies": {
     "@angular/common": "^13.3.0",
     "@angular/core": "^13.3.0",
+    "@js4cytoscape/cx-viz-converter": "^0.1.6",
     "cytoscape": "^3.21.1",
+    "cytoscape-cx2js": "^0.6.6",
     "lodash": "^4.17.21",
     "rxjs": "~7.5.0"
   },
