@@ -28,7 +28,7 @@ ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https:
 ## Installation
 
 ```shell
-npm install --save git+https://github.com/9von10/ngx-cytoscapejs.git
+npm install --save ngx-cytoscapejs
 ```
 
 ## Usage
@@ -111,8 +111,7 @@ If you have questions, concerns, bug reports, etc., please file an issue in [thi
 
 ## Roadmap
 
-- [ ] Publish NPM package
-- [ ] Documentation
+- [ ] Code documentation
 - [ ] Unit tests
 - [ ] Angular CLI schematics
 
