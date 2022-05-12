@@ -29,7 +29,9 @@
     "lint": "ng lint",
     "format": "pretty-quick --staged",
     "release": "standard-version --no-verify",
-    "gh-pages": "npm run build:lib && npm run build:demo -- --base-href demo-app && npm run build:docs && shx cp -r dist/demo-app docs"
+    "gh-pages": "npm run gh-pages:build && npm run gh-pages:copy",
+    "gh-pages:build": "npm run build:lib && npm run build:demo -- --base-href demo-app && npm run build:docs",
+    "gh-pages:copy": "shx cp -r dist/demo-app docs && shx cp docs/index.html docs/404.html && shx cp docs/demo-app/index.html docs/demo-app/404.html"
   },
   "dependencies": {
     "@angular/animations": "~13.3.0",
