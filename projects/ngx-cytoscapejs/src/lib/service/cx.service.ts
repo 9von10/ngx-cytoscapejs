@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { Injectable } from '@angular/core';
 import { CytoscapeOptions } from 'cytoscape';
 // @ts-ignore
@@ -6,10 +7,20 @@ import { convert } from '@js4cytoscape/cx-viz-converter';
 import { CyNetworkUtils, CxToJs } from 'cytoscape-cx2js';
 import { CxConverter } from '../enum/cx-converter.enum';
 
+/**
+ * This service handles the conversion from CX to Cytoscape.js graphs.
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class CxService {
+  /**
+   * Tries to convert the incoming CX object into CytoscapeOptions using the list of {@link CxConverter}s in sequence.
+   *
+   * @param {any} cxData CX object
+   * @param {CxConverter[]} converters List of {@link CxConverter}s
+   * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
+   */
   convert(cxData: any, converters: CxConverter[]): CytoscapeOptions | null {
     if (cxData && converters) {
       for (let i = 0; i < converters.length; i += 1) {
@@ -35,7 +46,12 @@ export class CxService {
     return null;
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  /**
+   * Tries to convert the input CX object using [cx2js]{@link https://github.com/cytoscape/cx2js}.
+   *
+   * @param {any} cxData CX object
+   * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
+   */
   private convertWithCx2JS(cxData: any): CytoscapeOptions | null {
     let options: CytoscapeOptions | null = null;
 
@@ -58,7 +74,12 @@ export class CxService {
     return options;
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  /**
+   * Tries to convert the input CX object using [cx-viz-converter]{@link https://github.com/cytoscape/cx-viz-converter}.
+   *
+   * @param {any} cxData CX object
+   * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
+   */
   private convertWithCxVizConverter(cxData: any): CytoscapeOptions | null {
     let options: CytoscapeOptions | null = null;
 
