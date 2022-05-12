@@ -1,0 +1,4 @@
+{
+  "include": ["projects/ngx-cytoscapejs/**/*.ts"],
+  "exclude": ["projects/ngx-cytoscapejs/**/*.spec.ts"]
+}

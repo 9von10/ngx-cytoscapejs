@@ -1,0 +1,5 @@
+{
+  "tsconfig": "tsconfig.doc.json",
+  "output": "docs",
+  "name": "ngx-cytoscapejs"
+}
