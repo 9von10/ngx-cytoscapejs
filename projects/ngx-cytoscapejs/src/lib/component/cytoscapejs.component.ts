@@ -18,8 +18,6 @@ import { CxService } from '../service/cx.service';
 
 /**
  * This component handles rendering the Cytoscape.js graph.
- *
- * <example-url>/demo-app/index.html</example-url>
  */
 @Component({
   selector: 'cytoscapejs',
