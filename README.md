@@ -1,4 +1,10 @@
-# ngx-cytoscapejs
+<h1 align="center">ngx-cytoscapejs</h1>
+
+<p align="center">
+  <a href="https://9von10.github.io/ngx-cytoscapejs/">Documentation</a>
+  ·
+  <a href="https://9von10.github.io/ngx-cytoscapejs/demo-app/">Demo</a>
+</p>
 
 This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be used from any Angular 13+ application.
 
@@ -111,7 +117,6 @@ If you have questions, concerns, bug reports, etc., please file an issue in [thi
 
 ## Roadmap
 
-- [ ] Code documentation
 - [ ] Unit tests
 - [ ] Angular CLI schematics
 
