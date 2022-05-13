@@ -20,3 +20,4 @@ jobs:
         with:
           commit: --no-verify
           new_branch: gh-pages
+          push: origin gh-pages --set-upstream --force
