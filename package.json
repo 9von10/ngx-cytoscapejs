@@ -12,6 +12,11 @@
     "url": "https://github.com/9von10/ngx-cytoscapejs/issues"
   },
   "homepage": "https://github.com/9von10/ngx-cytoscapejs#readme",
+  "keywords": [
+    "angular",
+    "cytoscape",
+    "cytoscapejs"
+  ],
   "scripts": {
     "prepare": "husky install",
     "ng": "ng",
