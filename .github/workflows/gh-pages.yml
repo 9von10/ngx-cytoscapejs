@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+permissions:
+    contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,4 +19,4 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         with:
           commit: --no-verify
-          new_branch: gh-pages-test
+          new_branch: gh-pages
