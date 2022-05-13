@@ -11,7 +11,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import cytoscape, { Core, CytoscapeOptions } from 'cytoscape';
-import { isEqual } from 'lodash';
 import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
 import { CxConverter } from '../enum/cx-converter.enum';
 import { CxService } from '../service/cx.service';
@@ -113,11 +112,7 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
   ngOnChanges(changes: SimpleChanges): void {
     const { cytoscapeOptions, cxData, autoFit } = changes;
 
-    if (
-      (cytoscapeOptions &&
-        !isEqual(cytoscapeOptions.previousValue, cytoscapeOptions.currentValue)) ||
-      (cxData && !isEqual(cxData.previousValue, cxData.currentValue))
-    ) {
+    if (cytoscapeOptions || cxData) {
       this.preRender();
     }
 
