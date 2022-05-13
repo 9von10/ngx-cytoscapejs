@@ -33,7 +33,7 @@
     "test:demo": "jest --config ./projects/demo-app/jest.config.js",
     "lint": "ng lint",
     "format": "pretty-quick --staged",
-    "release": "standard-version --no-verify",
+    "release": "shx cp README.md projects/ngx-cytoscapejs && standard-version --no-verify",
     "gh-pages": "npm run gh-pages:build && npm run gh-pages:copy",
     "gh-pages:build": "npm run build:lib && npm run build:demo -- --base-href demo-app && npm run build:docs",
     "gh-pages:copy": "shx cp -r dist/demo-app docs && shx cp docs/index.html docs/404.html && shx cp docs/demo-app/index.html docs/demo-app/404.html"
