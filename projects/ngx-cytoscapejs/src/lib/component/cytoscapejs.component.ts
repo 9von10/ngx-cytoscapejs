@@ -111,7 +111,7 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
    * @param {SimpleChanges} changes Object containing all changes
    */
   ngOnChanges(changes: SimpleChanges): void {
-    const { cytoscapeOptions, cxData } = changes;
+    const { cytoscapeOptions, cxData, autoFit } = changes;
 
     if (
       (cytoscapeOptions &&
@@ -119,6 +119,10 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
       (cxData && !isEqual(cxData.previousValue, cxData.currentValue))
     ) {
       this.preRender();
+    }
+
+    if (autoFit) {
+      this.fit();
     }
   }
 
