@@ -19,17 +19,32 @@ export class AppComponent {
 
   cxConverters!: CxConverter[];
 
+  renderCount = 0;
+
+  useMutableInputAssignment = true;
+
+  private cytoscapeJsonData!: CytoscapeOptions;
+
   constructor(private appService: AppService) {}
 
   coreChanged(core: Core): void {
     this.core = core;
+    this.renderCount += 1;
   }
 
   renderCytoscapeGraph(): void {
-    this.appService.getCyData().subscribe((data) => {
-      this.cxData = null;
-      this.cytoscapeOptions = data;
-    });
+    if (!this.cytoscapeJsonData) {
+      this.appService.getCyData().subscribe((data) => {
+        this.cxData = null;
+        this.cytoscapeJsonData = data;
+        this.cytoscapeOptions = this.cytoscapeJsonData;
+      });
+    } else if (this.useMutableInputAssignment) {
+      this.cytoscapeOptions = this.cytoscapeJsonData;
+    } else {
+      this.cytoscapeJsonData = { ...this.cytoscapeJsonData };
+      this.cytoscapeOptions = this.cytoscapeJsonData;
+    }
   }
 
   renderCx1Graph(): void {

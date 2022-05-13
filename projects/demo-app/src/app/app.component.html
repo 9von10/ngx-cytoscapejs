@@ -4,6 +4,22 @@
       <div class="mt-3">
         <div class="card mb-3">
           <div class="card-body">
+            <p>Times rendered: {{ renderCount }}</p>
+
+            <div class="form-check form-switch mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="switchMutable"
+                [(ngModel)]="useMutableInputAssignment"
+              />
+
+              <label class="form-check-label" for="switchMutable"
+                >Use mutable input assignment</label
+              >
+            </div>
+
             <button type="button" class="btn btn-primary" (click)="renderCytoscapeGraph()">
               Render Cytoscape.js graph
             </button>
@@ -32,6 +48,7 @@
                 id="switchAutoResize"
                 [(ngModel)]="autoFit"
               />
+
               <label class="form-check-label" for="switchAutoResize">Enable auto resize</label>
             </div>
 
@@ -40,6 +57,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-8 full-height">
       <cytoscapejs
         [cytoscapeOptions]="cytoscapeOptions!"
