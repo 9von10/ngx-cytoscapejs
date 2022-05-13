@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.3.0...v1.0.0) (2022-05-13)
+
+
+### Features
+
+* **demo:** add mutable and immutable input assignment showcase ([d53f493](https://github.com/9von10/ngx-cytoscapejs/commit/d53f4932ddd3a43a9324bba9c781b6449d12f487))
+* fit graph when setting autoFit input to true ([4023df5](https://github.com/9von10/ngx-cytoscapejs/commit/4023df55c3e31f9549e2cf8743bf02758f406ae1))
+* **lib:** remove lodash dependency ([c2abf2b](https://github.com/9von10/ngx-cytoscapejs/commit/c2abf2b9f7e708c30c77d5f815d6f07075dce16f))
+
 ## [0.3.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.2.0...v0.3.0) (2022-05-08)
 
 
