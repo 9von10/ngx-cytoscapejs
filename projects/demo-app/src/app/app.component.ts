@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Core, CytoscapeOptions } from 'cytoscape';
 import { CxConverter } from 'ngx-cytoscapejs';
 import { AppService } from './app.service';
@@ -25,11 +25,13 @@ export class AppComponent {
 
   private cytoscapeJsonData!: CytoscapeOptions;
 
-  constructor(private appService: AppService) {}
+  constructor(private cd: ChangeDetectorRef, private appService: AppService) {}
 
   coreChanged(core: Core): void {
     this.core = core;
     this.renderCount += 1;
+    // Mandatory cause `renderCount += 1` throws `NG0100: Expression has changed after it was checked` otherwise
+    this.cd.detectChanges();
   }
 
   renderCytoscapeGraph(): void {
