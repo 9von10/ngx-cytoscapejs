@@ -6,6 +6,7 @@ import { convert } from '@js4cytoscape/cx-viz-converter';
 // @ts-ignore
 import { CyNetworkUtils, CxToJs } from 'cytoscape-cx2js';
 import { CxConverter } from '../enum/cx-converter.enum';
+import { CxConversion } from '../enum/cx-conversion.enum';
 
 /**
  * This service handles the conversion from CX to Cytoscape.js graphs.
@@ -19,26 +20,26 @@ export class CxService {
    *
    * @param {any} cxData CX object
    * @param {CxConverter[]} converters List of {@link CxConverter}s
-   * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
+   * @returns {CxConversion | null} On success the resulting CxConversion object is returned, otherwise null is returned.
    */
-  convert(cxData: any, converters: CxConverter[]): CytoscapeOptions | null {
+  convert(cxData: any, converters: CxConverter[]): CxConversion | null {
     if (cxData && converters) {
       for (let i = 0; i < converters.length; i += 1) {
-        let cytoscapeOptions: CytoscapeOptions | null = null;
+        let conversion: CxConversion | null = null;
 
         switch (converters[i]) {
           case CxConverter.cx2js:
-            cytoscapeOptions = this.convertWithCx2JS(cxData);
+            conversion = this.convertWithCx2JS(cxData);
             break;
           case CxConverter.cxVizConverter:
-            cytoscapeOptions = this.convertWithCxVizConverter(cxData);
+            conversion = this.convertWithCxVizConverter(cxData);
             break;
           default:
             break;
         }
 
-        if (cytoscapeOptions) {
-          return cytoscapeOptions;
+        if (conversion) {
+          return conversion;
         }
       }
     }
@@ -50,11 +51,9 @@ export class CxService {
    * Tries to convert the input CX object using [cx2js]{@link https://github.com/cytoscape/cx2js}.
    *
    * @param {any} cxData CX object
-   * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
+   * @returns {CxConversion | null} On success the converted CytoscapeOptions object as well as the attributeNameMap object is returned, otherwise null is returned.
    */
-  private convertWithCx2JS(cxData: any): CytoscapeOptions | null {
-    let options: CytoscapeOptions | null = null;
-
+  private convertWithCx2JS(cxData: any): CxConversion | null {
     try {
       const utils = new CyNetworkUtils();
       const niceCX = utils.rawCXtoNiceCX(cxData);
@@ -66,12 +65,15 @@ export class CxService {
       const zoom = cx2Js.cyZoomFromNiceCX(niceCX);
       const pan = cx2Js.cyPanFromNiceCX(niceCX);
 
-      options = { elements, style, layout, zoom, pan };
+      const options: CytoscapeOptions = { elements, style, layout, zoom, pan };
+      const conversion: CxConversion = { options, attributeNameMap };
+
+      return conversion;
     } catch (error) {
       console.error(error);
     }
 
-    return options;
+    return null;
   }
 
   /**
@@ -80,15 +82,16 @@ export class CxService {
    * @param {any} cxData CX object
    * @returns {CytoscapeOptions | null} On success the converted CytoscapeOptions object is returned, otherwise null is returned.
    */
-  private convertWithCxVizConverter(cxData: any): CytoscapeOptions | null {
-    let options: CytoscapeOptions | null = null;
-
+  private convertWithCxVizConverter(cxData: any): CxConversion | null {
     try {
-      options = convert(cxData, 'cytoscapeJS');
+      const options: CytoscapeOptions = convert(cxData, 'cytoscapeJS');
+      const conversion: CxConversion = { options };
+
+      return conversion;
     } catch (error) {
       console.error(error);
     }
 
-    return options;
+    return null;
   }
 }
