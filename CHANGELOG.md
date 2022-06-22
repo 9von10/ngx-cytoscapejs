@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.0.0...v1.1.0) (2022-06-22)
+
+
+### Features
+
+* add output for CX attributeNameMap ([1f27366](https://github.com/9von10/ngx-cytoscapejs/commit/1f27366aa5d22bac992769b9e500b489c5f34c8b))
+
+
+### Bug Fixes
+
+* **demo:** fix NG0100 exception when updating render count ([00887da](https://github.com/9von10/ngx-cytoscapejs/commit/00887da7edd2d2e97e359d6fb5dcabc00ca67209))
+
 ## [1.0.0](https://github.com/9von10/ngx-cytoscapejs/compare/v0.3.0...v1.0.0) (2022-05-13)
 
 
