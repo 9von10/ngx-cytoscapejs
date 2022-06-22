@@ -99,9 +99,10 @@ For a graph to render you have to provide either `cytoscapeOptions` or `cxData`.
 
 ### Outputs
 
-| Name          | Type | Description                                    |
-| ------------- | ---- | ---------------------------------------------- |
-| `coreChanged` | Core | Emits a Core every time a new core is created. |
+| Name                        | Type               | Description                                                             |
+| --------------------------- | ------------------ | ----------------------------------------------------------------------- |
+| `coreChanged`               | Core               | Emits a Core every time a new core is created.                          |
+| `cxAttributeNameMapChanged` | CxAttributeNameMap | Emits a CxAttributeNameMap every time a graph is converted using cx2js. |
 
 ### Enums
 
@@ -111,6 +112,10 @@ For a graph to render you have to provide either `cytoscapeOptions` or `cxData`.
 | -------------- | ------------------------------------ |
 | cx2js          | Use cx2js for CX conversion          |
 | cxVizConverter | Use cxVizConverter for CX conversion |
+
+#### CxAttributeNameMap
+
+Properties are unknown as they depend on the converted CX graph.
 
 ## Getting help
 
