@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Core, CytoscapeOptions } from 'cytoscape';
-import { CxConverter } from 'ngx-cytoscapejs';
+import { CxAttributeNameMap, CxConverter } from 'ngx-cytoscapejs';
 import { AppService } from './app.service';
 
 @Component({
@@ -19,6 +19,8 @@ export class AppComponent {
 
   cxConverters!: CxConverter[];
 
+  cxAttributeNameMap!: CxAttributeNameMap;
+
   renderCount = 0;
 
   useMutableInputAssignment = true;
@@ -32,6 +34,10 @@ export class AppComponent {
     this.renderCount += 1;
     // Mandatory cause `renderCount += 1` throws `NG0100: Expression has changed after it was checked` otherwise
     this.cd.detectChanges();
+  }
+
+  cxAttributeNameMapChanged(cxAttributeNameMap: any): void {
+    this.cxAttributeNameMap = cxAttributeNameMap;
   }
 
   renderCytoscapeGraph(): void {

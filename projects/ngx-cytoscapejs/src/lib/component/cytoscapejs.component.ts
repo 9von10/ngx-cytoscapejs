@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 import cytoscape, { Core, CytoscapeOptions } from 'cytoscape';
 import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
+import { CxAttributeNameMap } from '../enum/cx-attribute-name-map.enum';
 import { CxConverter } from '../enum/cx-converter.enum';
 import { CxService } from '../service/cx.service';
 
@@ -54,6 +55,13 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
    * Each time a new [Cytoscape.js core]{@link https://js.cytoscape.org/#core} is built, this output is firing an event containing the recent core.
    */
   @Output() coreChanged: EventEmitter<Core> = new EventEmitter<Core>();
+
+  /**
+   * Each time a new [Cytoscape.js core]{@link https://js.cytoscape.org/#core} is built using [cx2js]{@link https://github.com/cytoscape/cx2js} the
+   * resulting attributeNameMap object is emitted as well.
+   */
+  @Output() cxAttributeNameMapChanged: EventEmitter<CxAttributeNameMap> =
+    new EventEmitter<CxAttributeNameMap>();
 
   /**
    * Reference to the HTMLElement that is used as a [container]{@link https://js.cytoscape.org/#core/initialisation} for the graph.
@@ -138,16 +146,20 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
       return;
     }
 
-    let options: CytoscapeOptions | null = null;
-
     if (this.cytoscapeOptions) {
-      options = this.cytoscapeOptions;
+      this.render(this.cytoscapeOptions);
     } else if (this.cxData) {
-      options = this.cxService.convert(this.cxData, this.cxConverters);
-    }
+      const conversion = this.cxService.convert(this.cxData, this.cxConverters);
 
-    if (options) {
-      this.render(options);
+      if (conversion) {
+        const { options, attributeNameMap } = conversion;
+
+        this.cxAttributeNameMapChanged.emit(attributeNameMap);
+
+        if (options) {
+          this.render(options);
+        }
+      }
     }
   }
 
