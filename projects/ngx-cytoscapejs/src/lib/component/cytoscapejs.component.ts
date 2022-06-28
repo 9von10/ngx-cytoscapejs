@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import cytoscape, { Core, CytoscapeOptions } from 'cytoscape';
 import { debounceTime, fromEvent, Subject, takeUntil } from 'rxjs';
-import { CxAttributeNameMap } from '../enum/cx-attribute-name-map.enum';
+import { CxAttributeNameMap } from '../interface/cx-attribute-name-map.interface';
 import { CxConverter } from '../enum/cx-converter.enum';
 import { CxService } from '../service/cx.service';
 
