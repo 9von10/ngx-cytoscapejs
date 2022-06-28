@@ -6,9 +6,11 @@
   <a href="https://9von10.github.io/ngx-cytoscapejs/demo-app/">Demo</a>
 </p>
 
-This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be used from any Angular 13+ application.
+This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be used from any Angular
+13+ application.
 
-- Rendering of [Cytoscape.js](https://js.cytoscape.org/) and [CX](https://home.ndexbio.org/data-model/) graphs
+- Rendering of [Cytoscape.js](https://js.cytoscape.org/)
+  and [CX](https://home.ndexbio.org/data-model/) graphs
 - Automatic rerendering on graph data changes
 - Automatic graph size adjustment on window resize
 
@@ -25,7 +27,9 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 
 ## Dependencies
 
-ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https://js.cytoscape.org/), [cx2js](https://github.com/cytoscape/cx2js) and [cxVizConverter](https://github.com/cytoscape/cx-viz-converter).
+ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https://js.cytoscape.org/)
+, [cx2js](https://github.com/cytoscape/cx2js)
+and [cxVizConverter](https://github.com/cytoscape/cx-viz-converter).
 
 | ngx-cytoscapejs | Angular | Cytoscape.js | cx2js | cxVizConverter | lodash |
 | --------------- | ------- | ------------ | ----- | -------------- | ------ |
@@ -43,8 +47,8 @@ npm install --save ngx-cytoscapejs
 Import the CytoscapejsModule and add it to your module:
 
 ```tsx
-import { NgModule } from '@angular/core';
-import { CytoscapejsModule } from 'ngx-cytoscapejs';
+import {NgModule} from '@angular/core';
+import {CytoscapejsModule} from 'ngx-cytoscapejs';
 
 @NgModule({
   declarations: [...],
@@ -52,12 +56,14 @@ import { CytoscapejsModule } from 'ngx-cytoscapejs';
   providers: [...],
   bootstrap: [...],
 })
-export class AppModule {}
+export class AppModule {
+}
 ```
 
 Add the cytoscapejs directive to your component's HTML:
 
 ```html
+
 <cytoscapejs
   [cytoscapeOptions]="cytoscapeOptions"
   [autoFit]="autoFit"
@@ -68,8 +74,8 @@ Add the cytoscapejs directive to your component's HTML:
 Configure the directive in your component:
 
 ```tsx
-import { Core, CytoscapeOptions } from 'cytoscape';
-import { CxConverter } from 'ngx-cytoscapejs';
+import {Core, CytoscapeOptions} from 'cytoscape';
+import {CxConverter} from 'ngx-cytoscapejs';
 
 export class AppComponent {
   cytoscapeOptions: CytoscapeOptions = {...};
@@ -86,16 +92,18 @@ The component will take up 100% of the parent's height and width.
 
 ## API
 
-For a graph to render you have to provide either `cytoscapeOptions` or `cxData`. The remaining inputs are optional.
+For a graph to render you have to provide either `cytoscapeOptions` or `cxData`. The remaining
+inputs are optional.
 
 ### Inputs
 
-| Name               | Type             | Default                 | Description                                                                                                                                                                                      |
-| ------------------ | ---------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `cytoscapeOptions` | CytoscapeOptions |                         | Your Cytoscape graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element.                                               |
-| `autoFit`          | boolean          | true                    | When set to true the graph will be fit every time the browser window is resized.                                                                                                                 |
-| `cxData`           | any              |                         | Your CX graph data. The data is converted using the the converters provided in the `cxConverters` input.                                                                                         |
-| `cxConverters`     | CxConverter[]    | [cx2js, cxVizConverter] | Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result. |
+| Name                   | Type             | Default                 | Description                                                                                                                                                                                      |
+|------------------------|------------------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cytoscapeOptions`     | CytoscapeOptions |                         | Your Cytoscape graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element.                                               |
+| `autoFit`              | boolean          | true                    | When set to true the graph will be fit every time the browser window is resized.                                                                                                                 |
+| `applyBackgroundColor` | boolean          | false                   | When set to true, the background color specified in the CX1 file will be applied to the visualization.                                                                                           |
+| `cxData`               | any              |                         | Your CX graph data. The data is converted using the the converters provided in the `cxConverters` input.                                                                                         |
+| `cxConverters`         | CxConverter[]    | [cx2js, cxVizConverter] | Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result. |
 
 ### Outputs
 
@@ -119,7 +127,8 @@ Properties are unknown as they depend on the converted CX graph.
 
 ## Getting help
 
-If you have questions, concerns, bug reports, etc., please file an issue in [this repository's Issue Tracker](https://github.com/9von10/ngx-cytoscapejs/issues).
+If you have questions, concerns, bug reports, etc., please file an issue
+in [this repository's Issue Tracker](https://github.com/9von10/ngx-cytoscapejs/issues).
 
 ## Roadmap
 
