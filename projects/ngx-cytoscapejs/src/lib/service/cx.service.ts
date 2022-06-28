@@ -6,7 +6,7 @@ import { convert } from '@js4cytoscape/cx-viz-converter';
 // @ts-ignore
 import { CyNetworkUtils, CxToJs } from 'cytoscape-cx2js';
 import { CxConverter } from '../enum/cx-converter.enum';
-import { CxConversion } from '../enum/cx-conversion.enum';
+import { CxConversion } from '../interface/cx-conversion.interface';
 
 /**
  * This service handles the conversion from CX to Cytoscape.js graphs.
