@@ -12,6 +12,10 @@ export class AppService {
     return this.http.get<any>('assets/cy-data.json');
   }
 
+  getCx1BackgroundData(): Observable<any> {
+    return this.http.get<any>('assets/cx1-background-data.json');
+  }
+
   getCx1Data(): Observable<any> {
     return this.http.get<any>('assets/cx1-data.json');
   }
