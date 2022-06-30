@@ -64,7 +64,7 @@ export class CxService {
       const layout = cx2Js.getDefaultLayout();
       const zoom = cx2Js.cyZoomFromNiceCX(niceCX);
       const pan = cx2Js.cyPanFromNiceCX(niceCX);
-      const backgroundColor: string = cx2Js.cyBackgroundColorFromNiceCX(niceCX);
+      const backgroundColor = cx2Js.cyBackgroundColorFromNiceCX(niceCX);
 
       const options: CytoscapeOptions = { elements, style, layout, zoom, pan };
       const conversion: CxConversion = { options, attributeNameMap, backgroundColor };

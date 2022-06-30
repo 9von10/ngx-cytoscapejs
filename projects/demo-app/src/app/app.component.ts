@@ -15,7 +15,7 @@ export class AppComponent {
 
   autoFit: boolean = true;
 
-  applyBackgroundColor: boolean = true;
+  applyCxBackgroundColor: boolean = true;
 
   cxData!: any;
 

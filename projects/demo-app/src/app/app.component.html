@@ -40,18 +40,32 @@
               Render CX1 graph with background color
             </button>
 
-            <div class="mt-3">
+            <div class="mt-3 mb-3">
               <label for="textareaNameMap" class="form-label">cxAttributeNameMap</label>
               <textarea class="form-control" id="textareaNameMap" rows="5">{{
                 cxAttributeNameMap | json
               }}</textarea>
+            </div>
+
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="switchApplyBackgroundColor"
+                [(ngModel)]="applyCxBackgroundColor"
+              />
+
+              <label class="form-check-label" for="switchApplyBackgroundColor"
+                >Apply background color</label
+              >
             </div>
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
-            <div class="form-check form-switch">
+            <div class="form-check form-switch mb-3">
               <input
                 class="form-check-input"
                 type="checkbox"
@@ -61,20 +75,6 @@
               />
 
               <label class="form-check-label" for="switchAutoResize">Enable auto resize</label>
-            </div>
-
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="switchApplyBackgroundColor"
-                [(ngModel)]="applyBackgroundColor"
-              />
-
-              <label class="form-check-label" for="switchApplyBackgroundColor"
-                >Apply background color</label
-              >
             </div>
 
             <button type="button" class="btn btn-primary" (click)="fitGraph()">Fit graph</button>
@@ -87,7 +87,7 @@
       <cytoscapejs
         [cytoscapeOptions]="cytoscapeOptions!"
         [autoFit]="autoFit"
-        [applyBackgroundColor]="applyBackgroundColor"
+        [applyCxBackgroundColor]="applyCxBackgroundColor"
         [cxData]="cxData"
         [cxConverters]="cxConverters"
         (coreChanged)="coreChanged($event)"

@@ -40,10 +40,10 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
 
   /**
    * Responsible for applying the background color specified in the CX file to the canvas.
-   * If true, the network's background color will be set to color specified in the CX.
+   * If true, the network's background color will be set to the color specified in the CX.
    * If false, the network's background color will be white.
    */
-  @Input() applyBackgroundColor: boolean = false;
+  @Input() applyCxBackgroundColor: boolean = false;
 
   /**
    * Object containing information about a graph. Must conform to [CX data model]{@link https://home.ndexbio.org/data-model/}.
@@ -160,12 +160,15 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
 
       if (conversion) {
         const { options, attributeNameMap, backgroundColor } = conversion;
-        const htmlElement: HTMLElement = this.cyElementRef.nativeElement;
 
-        if (backgroundColor && this.applyBackgroundColor) {
-          htmlElement.style.backgroundColor = backgroundColor;
-        } else {
-          htmlElement.style.backgroundColor = '';
+        if (this.cyElementRef && this.cyElementRef.nativeElement) {
+          const htmlElement: HTMLElement = this.cyElementRef.nativeElement;
+
+          if (this.applyCxBackgroundColor && backgroundColor) {
+            htmlElement.style.backgroundColor = backgroundColor;
+          } else {
+            htmlElement.style.backgroundColor = '';
+          }
         }
 
         this.cxAttributeNameMapChanged.emit(attributeNameMap);

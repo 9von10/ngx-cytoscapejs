@@ -90,12 +90,13 @@ For a graph to render you have to provide either `cytoscapeOptions` or `cxData`.
 
 ### Inputs
 
-| Name               | Type             | Default                 | Description                                                                                                                                                                                      |
-| ------------------ | ---------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `cytoscapeOptions` | CytoscapeOptions |                         | Your Cytoscape graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element.                                               |
-| `autoFit`          | boolean          | true                    | When set to true the graph will be fit every time the browser window is resized.                                                                                                                 |
-| `cxData`           | any              |                         | Your CX graph data. The data is converted using the the converters provided in the `cxConverters` input.                                                                                         |
-| `cxConverters`     | CxConverter[]    | [cx2js, cxVizConverter] | Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result. |
+| Name                     | Type             | Default                 | Description                                                                                                                                                                                      |
+| ------------------------ | ---------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cytoscapeOptions`       | CytoscapeOptions |                         | Your Cytoscape graph data. You don't have to provide the container property as it will be overwritten with the component's referenced DOM element.                                               |
+| `autoFit`                | boolean          | true                    | When set to true the graph will be fit every time the browser window is resized.                                                                                                                 |
+| `applyCxBackgroundColor` | boolean          | false                   | When set to true, the background color specified in the CX1 file will be applied to the visualization.                                                                                           |
+| `cxData`                 | any              |                         | Your CX graph data. The data is converted using the the converters provided in the `cxConverters` input.                                                                                         |
+| `cxConverters`           | CxConverter[]    | [cx2js, cxVizConverter] | Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result. |
 
 ### Outputs
 
