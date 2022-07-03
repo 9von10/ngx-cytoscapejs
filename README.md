@@ -114,6 +114,16 @@ For a graph to render you have to provide either `cytoscapeOptions` or `cxData`.
 | cx2js          | Use cx2js for CX conversion          |
 | cxVizConverter | Use cxVizConverter for CX conversion |
 
+### Interfaces
+
+#### CxConversion
+
+| Value            | Type               | Description                                                                            |
+| ---------------- | ------------------ | -------------------------------------------------------------------------------------- |
+| options          | CytoscapeOptions   | The CytoscapeOptions object resulting from the conversion.                             |
+| attributeNameMap | CxAttributeNameMap | The attribute mapping created when converting the CX graph. This property is optional. |
+| backgroundColor  | string             | The background color extracted from the CX graph. This property is optional.           |
+
 #### CxAttributeNameMap
 
 Properties are unknown as they depend on the converted CX graph.
