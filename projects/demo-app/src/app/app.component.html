@@ -32,22 +32,40 @@
               Render CX1 graph
             </button>
 
-            <button type="button" class="btn btn-primary" (click)="renderCx2Graph()">
+            <button type="button" class="btn btn-primary me-1" (click)="renderCx2Graph()">
               Render CX2 graph
             </button>
 
-            <div class="mt-3">
+            <button type="button" class="btn btn-primary" (click)="renderCx1BackgroundGraph()">
+              Render CX1 graph with background color
+            </button>
+
+            <div class="mt-3 mb-3">
               <label for="textareaNameMap" class="form-label">cxAttributeNameMap</label>
               <textarea class="form-control" id="textareaNameMap" rows="5">{{
                 cxAttributeNameMap | json
               }}</textarea>
+            </div>
+
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="switchApplyBackgroundColor"
+                [(ngModel)]="applyCxBackgroundColor"
+              />
+
+              <label class="form-check-label" for="switchApplyBackgroundColor"
+                >Apply background color</label
+              >
             </div>
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
-            <div class="form-check form-switch">
+            <div class="form-check form-switch mb-3">
               <input
                 class="form-check-input"
                 type="checkbox"
@@ -69,6 +87,7 @@
       <cytoscapejs
         [cytoscapeOptions]="cytoscapeOptions!"
         [autoFit]="autoFit"
+        [applyCxBackgroundColor]="applyCxBackgroundColor"
         [cxData]="cxData"
         [cxConverters]="cxConverters"
         (coreChanged)="coreChanged($event)"

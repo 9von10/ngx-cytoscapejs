@@ -15,6 +15,8 @@ export class AppComponent {
 
   autoFit: boolean = true;
 
+  applyCxBackgroundColor: boolean = true;
+
   cxData!: any;
 
   cxConverters!: CxConverter[];
@@ -53,6 +55,14 @@ export class AppComponent {
       this.cytoscapeJsonData = { ...this.cytoscapeJsonData };
       this.cytoscapeOptions = this.cytoscapeJsonData;
     }
+  }
+
+  renderCx1BackgroundGraph(): void {
+    this.appService.getCx1BackgroundData().subscribe((data) => {
+      this.cytoscapeOptions = null;
+      this.cxConverters = [CxConverter.cx2js];
+      this.cxData = data;
+    });
   }
 
   renderCx1Graph(): void {
