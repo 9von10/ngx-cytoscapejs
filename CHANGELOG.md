@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.1.0...v1.2.0) (2022-07-03)
+
+
+### Features
+
+* applicable CX background color ([0322853](https://github.com/9von10/ngx-cytoscapejs/commit/0322853bdb4b1ee58c2ee57903ac98227d00fd21))
+
+
+### Bug Fixes
+
+* **lib:** move interfaces into own folder ([3bad2cc](https://github.com/9von10/ngx-cytoscapejs/commit/3bad2cced032fd80eb194034bb35202f59fbdfb6))
+
 ## [1.1.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.0.0...v1.1.0) (2022-06-22)
 
 
