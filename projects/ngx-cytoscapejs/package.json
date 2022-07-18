@@ -12,6 +12,15 @@
     "url": "https://github.com/9von10/ngx-cytoscapejs/issues"
   },
   "homepage": "https://github.com/9von10/ngx-cytoscapejs#readme",
+  "keywords": [
+    "angular",
+    "cytoscape",
+    "cytoscapejs"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.schematics.json",
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngx-cytoscapejs/"
+  },
   "peerDependencies": {
     "@angular/common": "^13.3.0",
     "@angular/core": "^13.3.0",
@@ -22,5 +31,13 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "copyfiles": "file:../../node_modules/copyfiles",
+    "typescript": "file:../../node_modules/typescript"
+  },
+  "schematics": "./schematics/collection.json",
+  "ng-add": {
+    "save": "dependencies"
   }
 }
