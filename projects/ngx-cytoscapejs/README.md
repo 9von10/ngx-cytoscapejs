@@ -34,13 +34,22 @@ ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https:
 
 ## Installation
 
+Using the [Angular CLI](https://angular.io/cli) is recommended:
+
 ```shell
+ng add ngx-cytoscapejs
+```
+
+### Manual installation
+
+Add dependencies from npm.
+
+```shell
+npm install --save-dev @types/cytoscape
 npm install --save ngx-cytoscapejs
 ```
 
-## Usage
-
-Import the CytoscapejsModule and add it to your module:
+Then import the CytoscapejsModule and add it to your module:
 
 ```tsx
 import { NgModule } from '@angular/core';
@@ -54,6 +63,8 @@ import { CytoscapejsModule } from 'ngx-cytoscapejs';
 })
 export class AppModule {}
 ```
+
+## Usage
 
 Add the cytoscapejs directive to your component's HTML:
 
@@ -135,7 +146,6 @@ If you have questions, concerns, bug reports, etc., please file an issue in [thi
 ## Roadmap
 
 - [ ] Unit tests
-- [ ] Angular CLI schematics
 
 ## License
 
