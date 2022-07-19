@@ -118,7 +118,7 @@ function addCytoscapeTypes(): Rule {
     const cytoscapeTypesVersion = getDevPackageVersionFromPackageJson(tree, '@types/cytoscape');
 
     if (cytoscapeTypesVersion === null) {
-      addDevPackageToPackageJson(tree, '@types/cytoscape', '*');
+      addDevPackageToPackageJson(tree, '@types/cytoscape', '^3.19.4');
     }
 
     return tree;
