@@ -1,0 +1,71 @@
+[
+  {
+    "nodes": [
+      {
+        "@id": 1,
+        "n": "A"
+      },
+      {
+        "@id": 2,
+        "n": "B"
+      },
+      {
+        "@id": 3,
+        "n": "C"
+      }
+    ]
+  },
+  {
+    "edges": [
+      {
+        "@id": 1,
+        "s": 1,
+        "t": 2
+      },
+      {
+        "@id": 2,
+        "s": 1,
+        "t": 3
+      }
+    ]
+  },
+  {
+    "cartesianLayout": [
+      {
+        "node": 1,
+        "x": 100,
+        "y": 100
+      },
+      {
+        "node": 2,
+        "x": 200,
+        "y": 120
+      },
+      {
+        "node": 3,
+        "x": 0,
+        "y": 0
+      }
+    ]
+  },
+  {
+    "cyVisualProperties": [
+      {
+        "properties_of": "network",
+        "properties": {
+          "NETWORK_BACKGROUND_PAINT": "#EAE9E8"
+        }
+      },
+      {
+        "properties_of": "nodes:default",
+        "dependencies": {},
+        "properties": {}
+      },
+      {
+        "properties_of": "edges:default",
+        "dependencies": {},
+        "properties": {}
+      }
+    ]
+  }
+]
