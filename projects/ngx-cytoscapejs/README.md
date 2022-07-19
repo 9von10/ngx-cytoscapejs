@@ -27,10 +27,14 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 
 ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https://js.cytoscape.org/), [cx2js](https://github.com/cytoscape/cx2js) and [cxVizConverter](https://github.com/cytoscape/cx-viz-converter).
 
-| ngx-cytoscapejs | Angular | Cytoscape.js | cx2js | cxVizConverter | lodash |
-| --------------- | ------- | ------------ | ----- | -------------- | ------ |
-| 0.3.0           | 13.x.x  | 3.x.x        | 0.6.x | 0.1.x          | 4.x.x  |
-| 1.0.0           | 13.x.x  | 3.x.x        | 0.6.x | 0.1.x          |        |
+| ngx-cytoscapejs | Angular | Cytoscape.js | ng-add        |
+| --------------- | ------- | ------------ | ------------- |
+| 0.3.x           | 13.x    | 3.x          | not supported |
+| 1.0.x           | 13.x    | 3.x          | not supported |
+| 1.1.x           | 13.x    | 3.x          | not supported |
+| 1.2.x           | 13.x    | 3.x          | not supported |
+| 1.3.x           | 13.x    | 3.x          | supported     |
+| 1.4.x           | 14.x    | 3.x          | supported     |
 
 ## Installation
 
