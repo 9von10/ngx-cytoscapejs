@@ -61,7 +61,11 @@
             "assets": ["projects/demo-app/src/favicon.ico", "projects/demo-app/src/assets"],
             "styles": ["projects/demo-app/src/styles.scss"],
             "scripts": [],
-            "allowedCommonJsDependencies": ["cytoscape"]
+            "allowedCommonJsDependencies": [
+              "cytoscape",
+              "cytoscape-cx2js",
+              "@js4cytoscape/cx-viz-converter"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,7 +128,6 @@
     }
   },
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
-  },
-  "defaultProject": "ngx-cytoscapejs"
+    "schematicCollections": ["@angular-eslint/schematics"]
+  }
 }

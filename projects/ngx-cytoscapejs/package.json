@@ -22,8 +22,8 @@
     "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngx-cytoscapejs/"
   },
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0",
+    "@angular/common": "^14.0.6",
+    "@angular/core": "^14.0.6",
     "@js4cytoscape/cx-viz-converter": "^0.1.6",
     "cytoscape": "^3.21.1",
     "cytoscape-cx2js": "^0.6.6",
@@ -33,6 +33,8 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/schematics": "file:../../node_modules/@angular-devkit/schematics",
+    "@schematics/angular": "file:../../node_modules/@schematics/angular",
     "copyfiles": "file:../../node_modules/copyfiles",
     "typescript": "file:../../node_modules/typescript"
   },
