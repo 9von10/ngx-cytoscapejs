@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.2.0...v1.3.0) (2022-07-19)
+
+
+### Features
+
+* **build:** add @types/cytoscape when using ng-add ([8ee8928](https://github.com/9von10/ngx-cytoscapejs/commit/8ee89286e7ef09c1afe7072562ca3b358cf266f7))
+* **build:** add Angular schematics ([d5d3b2b](https://github.com/9von10/ngx-cytoscapejs/commit/d5d3b2b747d2092e0407c73a94c9f28972ada652))
+* **build:** add module to app when using ng-add ([106af81](https://github.com/9von10/ngx-cytoscapejs/commit/106af81c2e86b5992b7d7d3cdfcc35a8511641d2))
+
+
+### Bug Fixes
+
+* **build:** use proper version for @types/cytoscape ([f8f8531](https://github.com/9von10/ngx-cytoscapejs/commit/f8f8531b87d5614252097240c5b690e67ed8dd2a))
+
 ## [1.2.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.1.0...v1.2.0) (2022-07-03)
 
 
