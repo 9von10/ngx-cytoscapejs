@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.3.0...v1.4.0) (2022-07-19)
+
+
+### Features
+
+* add Angular 14 support ([075e87f](https://github.com/9von10/ngx-cytoscapejs/commit/075e87f8315560d820155d590912666b8e64562f))
+
 ## [1.3.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.2.0...v1.3.0) (2022-07-19)
 
 
