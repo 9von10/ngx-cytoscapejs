@@ -29,7 +29,10 @@ export class AppComponent {
 
   private cytoscapeJsonData!: CytoscapeOptions;
 
-  constructor(private cd: ChangeDetectorRef, private appService: AppService) {}
+  constructor(
+    private cd: ChangeDetectorRef,
+    private appService: AppService,
+  ) {}
 
   coreChanged(core: Core): void {
     this.core = core;

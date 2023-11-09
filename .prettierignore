@@ -4,3 +4,6 @@
 .husky/
 dist/
 node_modules/
+.gitignore
+.prettierignore
+CHANGELOG.md
