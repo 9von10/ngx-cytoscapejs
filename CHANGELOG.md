@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.5.0...v1.6.0) (2023-11-10)
+
+
+### Features
+
+* add Angular 16 support ([75c339f](https://github.com/9von10/ngx-cytoscapejs/commit/75c339f895604fd9ba8e29cb8f7453f0b3d58bc8))
+* update Jest to version 29 ([e51085f](https://github.com/9von10/ngx-cytoscapejs/commit/e51085f4c2dc64d5540df089c6b213401bc3c266))
+
 ## [1.5.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.4.0...v1.5.0) (2023-11-10)
 
 
