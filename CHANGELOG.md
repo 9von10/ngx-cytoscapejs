@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.4.0...v1.5.0) (2023-11-10)
+
+
+### Features
+
+* add Angular 15 support ([2b457d4](https://github.com/9von10/ngx-cytoscapejs/commit/2b457d49b7205f9740ef783e68176652a0e371a0))
+* update dependencies ([e1ce213](https://github.com/9von10/ngx-cytoscapejs/commit/e1ce213fc14d5e4c610ce08e2321ff9549d7d533))
+
+
+### Bug Fixes
+
+* fix library peer dependencies ([e8b6378](https://github.com/9von10/ngx-cytoscapejs/commit/e8b637873684212f478ff19ce74babb2cf2ee68b))
+
 ## [1.4.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.3.0...v1.4.0) (2022-07-19)
 
 
