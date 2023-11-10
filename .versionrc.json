@@ -11,6 +11,10 @@
       "type": "json"
     },
     {
+      "filename": "package-lock.json",
+      "type": "json"
+    },
+    {
       "filename": "projects/ngx-cytoscapejs/package.json",
       "type": "json"
     }
