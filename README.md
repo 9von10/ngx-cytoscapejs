@@ -37,6 +37,7 @@ ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https:
 | 1.4.x           | 14.x    | 3.x          | supported     |
 | 1.5.x           | 15.x    | 3.x          | supported     |
 | 1.6.x           | 16.x    | 3.x          | supported     |
+| 1.7.x           | 17.x    | 3.x          | supported     |
 
 ## Installation
 
