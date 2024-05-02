@@ -22,8 +22,8 @@
     "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ngx-cytoscapejs/"
   },
   "peerDependencies": {
-    "@angular/common": "^16.2.12",
-    "@angular/core": "^16.2.12",
+    "@angular/common": "^17.2.0",
+    "@angular/core": "^17.2.0",
     "@js4cytoscape/cx-viz-converter": "^0.1.6",
     "cytoscape": "^3.21.1",
     "cytoscape-cx2js": "^0.6.6",
