@@ -33,7 +33,7 @@
     "test": "npm run lib:test && npm run lib:build && npm run demo:test",
     "lint": "ng lint",
     "format": "npx prettier . --write",
-    "release": "standard-version --no-verify",
+    "release": "commit-and-tag-version --no-verify",
     "gh-pages:build": "npm run lib:build && npm run demo:build -- --base-href demo-app && npm run docs:build",
     "gh-pages:copy": "shx cp -r dist/demo-app docs && shx cp docs/index.html docs/404.html && shx cp docs/demo-app/index.html docs/demo-app/404.html",
     "gh-pages": "npm run gh-pages:build && npm run gh-pages:copy"
@@ -73,6 +73,7 @@
     "@types/node": "^20.12.8",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
+    "commit-and-tag-version": "^12.4.1",
     "copyfiles": "^2.4.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -86,7 +87,6 @@
     "ng-packagr": "^17.3.0",
     "prettier": "^3.0.3",
     "shx": "^0.3.4",
-    "standard-version": "^9.3.2",
     "typescript": "~5.3.3"
   }
 }
