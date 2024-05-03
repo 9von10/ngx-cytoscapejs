@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscapejs-workspace",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Cytoscape.js Angular Wrapper",
   "author": "https://github.com/9von10/ngx-cytoscapejs/graphs/contributors",
   "license": "MIT",

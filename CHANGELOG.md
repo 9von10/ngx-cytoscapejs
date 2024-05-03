@@ -1,6 +1,18 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.7.1](https://github.com/9von10/ngx-cytoscapejs/compare/v1.7.0...v1.7.1) (2024-05-03)
+
+
+### Features
+
+* update dependencies ([e5c3ae6](https://github.com/9von10/ngx-cytoscapejs/commit/e5c3ae6a04aacf4076b5de99ab483327ab961ae7))
+
+
+### Bug Fixes
+
+* **lib:** fix library dependencies not refering to Angular 17 ([d9631fd](https://github.com/9von10/ngx-cytoscapejs/commit/d9631fd0725081bbd5b570297fa6d885bf5e1c02))
 
 ## [1.7.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.6.0...v1.7.0) (2024-02-18)
 
