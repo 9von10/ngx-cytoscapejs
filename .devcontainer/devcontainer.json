@@ -1,0 +1,17 @@
+{
+  "name": "ngx-cytoscapejs",
+  "forwardPorts": [4200],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "image": "node:20",
+  "postCreateCommand": "npm install -g npm@latest @angular/cli@latest && npm install"
+}
