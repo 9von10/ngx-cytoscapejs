@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "esModuleInterop": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -15,14 +16,12 @@
       "ngx-cytoscapejs": ["dist/ngx-cytoscapejs/ngx-cytoscapejs", "dist/ngx-cytoscapejs"]
     },
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
     "module": "es2020",
     "lib": ["es2020", "dom"],
-    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
