@@ -19,7 +19,6 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 - [Usage](#usage)
 - [API](#api)
 - [Getting help](#getting-help)
-- [Roadmap](#roadmap)
 - [License](#license)
 - [Credits and references](#credits-and-references)
 
@@ -27,33 +26,58 @@ This library is a wrapper for [Cytoscape.js](https://js.cytoscape.org/) to be us
 
 ngx-cytoscapejs depends on [Angular](https://angular.io/), [Cytoscape.js](https://js.cytoscape.org/), [cx2js](https://github.com/cytoscape/cx2js) and [cxVizConverter](https://github.com/cytoscape/cx-viz-converter).
 
-| ngx-cytoscapejs | Angular | Cytoscape.js | ng-add        |
-| --------------- | ------- | ------------ | ------------- |
-| 0.3.x           | 13.x    | 3.x          | not supported |
-| 1.0.x           | 13.x    | 3.x          | not supported |
-| 1.1.x           | 13.x    | 3.x          | not supported |
-| 1.2.x           | 13.x    | 3.x          | not supported |
-| 1.3.x           | 13.x    | 3.x          | supported     |
-| 1.4.x           | 14.x    | 3.x          | supported     |
-| 1.5.x           | 15.x    | 3.x          | supported     |
-| 1.6.x           | 16.x    | 3.x          | supported     |
-| 1.7.x           | 17.x    | 3.x          | supported     |
+| ngx-cytoscapejs | Angular | Cytoscape.js | ng-add             |
+| --------------- | ------- | ------------ | ------------------ |
+| 0.3.x           | 13.x    | 3.x          | :x:                |
+| 1.0.x           | 13.x    | 3.x          | :x:                |
+| 1.1.x           | 13.x    | 3.x          | :x:                |
+| 1.2.x           | 13.x    | 3.x          | :x:                |
+| 1.3.x           | 13.x    | 3.x          | :heavy_check_mark: |
+| 1.4.x           | 14.x    | 3.x          | :heavy_check_mark: |
+| 1.5.x           | 15.x    | 3.x          | :heavy_check_mark: |
+| 1.6.x           | 16.x    | 3.x          | :heavy_check_mark: |
+| 1.7.x           | 17.x    | 3.x          | :heavy_check_mark: |
+| 1.8.x           | 18.x    | 3.x          | :x:                |
 
 ## Installation
+
+Add dependencies from npm:
+
+```shell´´
+npm install --save ngx-cytoscapejs
+```
+
+Then import the CytoscapejsComponent into your component:
+
+```tsx
+import { CytoscapejsComponent } from 'ngx-cytoscapejs';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CytoscapejsComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
+})
+export class AppComponent {}
+```
+
+<details>
+<summary>Before 1.8.x</summary>
 
 Using the [Angular CLI](https://angular.io/cli) is recommended:
 
 ```shell
-ng add ngx-cytoscapejs
+ng add ngx-cytoscapejs@<version>
 ```
 
 ### Manual installation
 
-Add dependencies from npm.
+Add dependencies from npm:
 
 ```shell
 npm install --save-dev @types/cytoscape
-npm install --save ngx-cytoscapejs
+npm install --save ngx-cytoscapejs@<version>
 ```
 
 Then import the CytoscapejsModule and add it to your module:
@@ -70,6 +94,8 @@ import { CytoscapejsModule } from 'ngx-cytoscapejs';
 })
 export class AppModule {}
 ```
+
+</details>
 
 ## Usage
 
@@ -145,10 +171,6 @@ Properties are unknown as they depend on the converted CX graph.
 ## Getting help
 
 If you have questions, concerns, bug reports, etc., please file an issue in [this repository's Issue Tracker](https://github.com/9von10/ngx-cytoscapejs/issues).
-
-## Roadmap
-
-- [ ] Unit tests
 
 ## License
 
