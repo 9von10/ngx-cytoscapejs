@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.8.0](https://github.com/9von10/ngx-cytoscapejs/compare/v1.7.1...v1.8.0) (2024-08-02)
+
+
+### Features
+
+* migrate to standalone ([b9836ea](https://github.com/9von10/ngx-cytoscapejs/commit/b9836ead67bd67f69febb6083071a724060fb13b))
+* **npm:** update dependencies ([d6712b2](https://github.com/9von10/ngx-cytoscapejs/commit/d6712b2b1b2c8f5d1dbe02a2abafa569e6de3c44))
+* upgrade to Angular 18 ([85f8fe3](https://github.com/9von10/ngx-cytoscapejs/commit/85f8fe3bfb7afe729eeb9d53a80664d03ef9c563))
+
 ## [1.7.1](https://github.com/9von10/ngx-cytoscapejs/compare/v1.7.0...v1.7.1) (2024-05-03)
 
 
