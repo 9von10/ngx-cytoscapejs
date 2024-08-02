@@ -1,0 +1,449 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-cytoscapejs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">ngx-cytoscapejs</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 align="center">ngx-cytoscapejs</h1>
+
+<p align="center">
+  <a href="https://9von10.github.io/ngx-cytoscapejs/">Documentation</a>
+  ·
+  <a href="https://9von10.github.io/ngx-cytoscapejs/demo-app/">Demo</a>
+</p>
+
+<p>This library is a wrapper for <a href="https://js.cytoscape.org/">Cytoscape.js</a> to be used from any Angular 13+ application.</p>
+<ul>
+<li>Rendering of <a href="https://js.cytoscape.org/">Cytoscape.js</a> and <a href="https://home.ndexbio.org/data-model/">CX</a> graphs</li>
+<li>Automatic rerendering on graph data changes</li>
+<li>Automatic graph size adjustment on window resize</li>
+</ul>
+<h2>Table of contents</h2>
+<ul>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#getting-help">Getting help</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#credits-and-references">Credits and references</a></li>
+</ul>
+<h2>Dependencies</h2>
+<p>ngx-cytoscapejs depends on <a href="https://angular.io/">Angular</a>, <a href="https://js.cytoscape.org/">Cytoscape.js</a>, <a href="https://github.com/cytoscape/cx2js">cx2js</a> and <a href="https://github.com/cytoscape/cx-viz-converter">cxVizConverter</a>.</p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>ngx-cytoscapejs</th>
+<th>Angular</th>
+<th>Cytoscape.js</th>
+<th>ng-add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.3.x</td>
+<td>13.x</td>
+<td>3.x</td>
+<td>:x:</td>
+</tr>
+<tr>
+<td>1.0.x</td>
+<td>13.x</td>
+<td>3.x</td>
+<td>:x:</td>
+</tr>
+<tr>
+<td>1.1.x</td>
+<td>13.x</td>
+<td>3.x</td>
+<td>:x:</td>
+</tr>
+<tr>
+<td>1.2.x</td>
+<td>13.x</td>
+<td>3.x</td>
+<td>:x:</td>
+</tr>
+<tr>
+<td>1.3.x</td>
+<td>13.x</td>
+<td>3.x</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>1.4.x</td>
+<td>14.x</td>
+<td>3.x</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>1.5.x</td>
+<td>15.x</td>
+<td>3.x</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>1.6.x</td>
+<td>16.x</td>
+<td>3.x</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>1.7.x</td>
+<td>17.x</td>
+<td>3.x</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>1.8.x</td>
+<td>18.x</td>
+<td>3.x</td>
+<td>:x:</td>
+</tr>
+</tbody>
+</table>
+<h2>Installation</h2>
+<p>Add dependencies from npm:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell´´">npm install --save ngx-cytoscapejs</code></pre></div><p>Then import the CytoscapejsComponent into your component:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-tsx">import { CytoscapejsComponent } from &#39;ngx-cytoscapejs&#39;;
+
+&#64;Component({
+  selector: &#39;app-root&#39;,
+  standalone: true,
+  imports: [CytoscapejsComponent],
+  templateUrl: &#39;./app.component.html&#39;,
+  styleUrl: &#39;./app.component.scss&#39;,
+})
+export class AppComponent {}</code></pre></div><details>
+<summary>Before 1.8.x</summary>
+
+<p>Using the <a href="https://angular.io/cli">Angular CLI</a> is recommended:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">ng add ngx-cytoscapejs&#64;&lt;version&gt;</code></pre></div><h3>Manual installation</h3>
+<p>Add dependencies from npm:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-shell">npm install --save-dev &#64;types/cytoscape
+npm install --save ngx-cytoscapejs&#64;&lt;version&gt;</code></pre></div><p>Then import the CytoscapejsModule and add it to your module:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-tsx">import { NgModule } from &#39;&#64;angular/core&#39;;
+import { CytoscapejsModule } from &#39;ngx-cytoscapejs&#39;;
+
+&#64;NgModule({
+  declarations: [...],
+  imports: [CytoscapejsModule],
+  providers: [...],
+  bootstrap: [...],
+})
+export class AppModule {}</code></pre></div></details>
+
+<h2>Usage</h2>
+<p>Add the cytoscapejs directive to your component&#39;s HTML:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;cytoscapejs [cytoscapeOptions]=&quot;cytoscapeOptions&quot; [autoFit]=&quot;autoFit&quot; (coreChanged)=&quot;coreChanged($event)&quot;&gt;&lt;/cytoscapejs&gt;</code></pre></div><p>Configure the directive in your component:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-tsx">import { Core, CytoscapeOptions } from &#39;cytoscape&#39;;
+import { CxConverter } from &#39;ngx-cytoscapejs&#39;;
+
+export class AppComponent {
+  cytoscapeOptions: CytoscapeOptions = {...};
+
+  autoFit: boolean = true;
+
+  coreChanged(core: Core): void {
+    // do something with the core
+  }
+}</code></pre></div><p>The component will take up 100% of the parent&#39;s height and width.</p>
+<h2>API</h2>
+<p>For a graph to render you have to provide either <code>cytoscapeOptions</code> or <code>cxData</code>. The remaining inputs are optional.</p>
+<h3>Inputs</h3>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cytoscapeOptions</code></td>
+<td>CytoscapeOptions</td>
+<td></td>
+<td>Your Cytoscape graph data. You don&#39;t have to provide the container property as it will be overwritten with the component&#39;s referenced DOM element.</td>
+</tr>
+<tr>
+<td><code>autoFit</code></td>
+<td>boolean</td>
+<td>true</td>
+<td>When set to true the graph will be fit every time the browser window is resized.</td>
+</tr>
+<tr>
+<td><code>applyCxBackgroundColor</code></td>
+<td>boolean</td>
+<td>false</td>
+<td>When set to true, the background color specified in the CX1 file will be applied to the visualization.</td>
+</tr>
+<tr>
+<td><code>cxData</code></td>
+<td>any</td>
+<td></td>
+<td>Your CX graph data. The data is converted using the the converters provided in the <code>cxConverters</code> input.</td>
+</tr>
+<tr>
+<td><code>cxConverters</code></td>
+<td>CxConverter[]</td>
+<td>[cx2js, cxVizConverter]</td>
+<td>Allows customizing the converters used by the library to convert the CX data. The library tries to convert the input data in the given order and renders the first successful conversion result.</td>
+</tr>
+</tbody>
+</table>
+<h3>Outputs</h3>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>coreChanged</code></td>
+<td>Core</td>
+<td>Emits a Core every time a new core is created.</td>
+</tr>
+<tr>
+<td><code>cxAttributeNameMapChanged</code></td>
+<td>CxAttributeNameMap</td>
+<td>Emits a CxAttributeNameMap every time a graph is converted using cx2js.</td>
+</tr>
+</tbody>
+</table>
+<h3>Enums</h3>
+<h4>CxConverter</h4>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cx2js</td>
+<td>Use cx2js for CX conversion</td>
+</tr>
+<tr>
+<td>cxVizConverter</td>
+<td>Use cxVizConverter for CX conversion</td>
+</tr>
+</tbody>
+</table>
+<h3>Interfaces</h3>
+<h4>CxConversion</h4>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Value</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>CytoscapeOptions</td>
+<td>The CytoscapeOptions object resulting from the conversion.</td>
+</tr>
+<tr>
+<td>attributeNameMap</td>
+<td>CxAttributeNameMap</td>
+<td>The attribute mapping created when converting the CX graph. This property is optional.</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>string</td>
+<td>The background color extracted from the CX graph. This property is optional.</td>
+</tr>
+</tbody>
+</table>
+<h4>CxAttributeNameMap</h4>
+<p>Properties are unknown as they depend on the converted CX graph.</p>
+<h2>Getting help</h2>
+<p>If you have questions, concerns, bug reports, etc., please file an issue in <a href="https://github.com/9von10/ngx-cytoscapejs/issues">this repository&#39;s Issue Tracker</a>.</p>
+<h2>License</h2>
+<p><a href="LICENSE">MIT</a></p>
+<h2>Credits and references</h2>
+<ul>
+<li><a href="https://js.cytoscape.org/">Cytoscape.js</a></li>
+<li><a href="https://github.com/calvinvette/ngx-cytoscape">ngx-cytoscape</a></li>
+<li><a href="https://github.com/cytoscape/cx2js">cytoscape-cx2js</a></li>
+<li><a href="https://github.com/cytoscape/cx-viz-converter">cxVizConverter</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
