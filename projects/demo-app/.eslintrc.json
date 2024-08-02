@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "createDefaultProgram": true
+        "project": ["projects/demo-app/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -23,7 +23,8 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "off"
       }
     },
     {

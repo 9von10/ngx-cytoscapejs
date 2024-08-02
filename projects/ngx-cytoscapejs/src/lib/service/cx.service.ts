@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import { Injectable } from '@angular/core';
 import { CytoscapeOptions } from 'cytoscape';
-// @ts-ignore
+// @ts-expect-error no types available
 import { convert } from '@js4cytoscape/cx-viz-converter';
-// @ts-ignore
+// @ts-expect-error no types available
 import { CyNetworkUtils, CxToJs } from 'cytoscape-cx2js';
 import { CxConverter } from '../enum/cx-converter.enum';
 import { CxConversion } from '../interface/cx-conversion.interface';
@@ -67,7 +67,11 @@ export class CxService {
       const backgroundColor = cx2Js.cyBackgroundColorFromNiceCX(niceCX);
 
       const options: CytoscapeOptions = { elements, style, layout, zoom, pan };
-      const conversion: CxConversion = { options, attributeNameMap, backgroundColor };
+      const conversion: CxConversion = {
+        options,
+        attributeNameMap,
+        backgroundColor,
+      };
 
       return conversion;
     } catch (error) {

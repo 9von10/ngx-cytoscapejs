@@ -5,11 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "projects/ngx-cytoscapejs/tsconfig.lib.json",
-          "projects/ngx-cytoscapejs/tsconfig.spec.json"
-        ],
-        "createDefaultProgram": true
+        "project": ["projects/ngx-cytoscapejs/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -19,7 +15,8 @@
             "prefix": "lib",
             "style": "camelCase"
           }
-        ]
+        ],
+        "@typescript-eslint/no-explicit-any": "warn"
       }
     },
     {

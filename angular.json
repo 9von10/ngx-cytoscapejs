@@ -1,6 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "schematicCollections": ["@angular-eslint/schematics"],
+    "analytics": false
+  },
   "newProjectRoot": "projects",
   "projects": {
     "ngx-cytoscapejs": {
@@ -40,9 +45,6 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "projects/demo-app",
@@ -57,37 +59,31 @@
               "browser": ""
             },
             "index": "projects/demo-app/src/index.html",
-            "polyfills": ["projects/demo-app/src/polyfills.ts"],
+            "browser": "projects/demo-app/src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/demo-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["projects/demo-app/src/favicon.ico", "projects/demo-app/src/assets"],
-            "styles": ["projects/demo-app/src/styles.scss"],
-            "scripts": [],
-            "allowedCommonJsDependencies": [
-              "cytoscape",
-              "cytoscape-cx2js",
-              "@js4cytoscape/cx-viz-converter"
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
             ],
-            "browser": "projects/demo-app/src/main.ts"
+            "styles": ["projects/demo-app/src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "750kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "projects/demo-app/src/environments/environment.ts",
-                  "with": "projects/demo-app/src/environments/environment.prod.ts"
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
                 }
               ],
               "outputHashing": "all"
@@ -95,8 +91,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -116,30 +111,18 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "demo-app:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/demo-app/**/*.ts", "projects/demo-app/**/*.html"]
+            "lintFilePatterns": [
+              "projects/demo-app/**/*.ts",
+              "projects/demo-app/**/*.html"
+            ]
           }
         }
       }
-    }
-  },
-  "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"],
-    "analytics": false
-  },
-  "schematics": {
-    "@angular-eslint/schematics:application": {
-      "setParserOptionsProject": true
-    },
-    "@angular-eslint/schematics:library": {
-      "setParserOptionsProject": true
     }
   }
 }

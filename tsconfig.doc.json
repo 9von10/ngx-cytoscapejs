@@ -1,4 +1,4 @@
 {
-  "include": ["projects/ngx-cytoscapejs/**/*.ts"],
-  "exclude": ["projects/ngx-cytoscapejs/**/*.spec.ts"]
+  "include": ["projects/ngx-cytoscapejs/src/**/*.ts"],
+  "exclude": ["projects/ngx-cytoscapejs/src/**/*.spec.ts"]
 }

@@ -4,12 +4,22 @@
     "metaData": [
       { "name": "nodeAttributes", "elementCount": 243, "version": "1.0" },
       { "name": "cyHiddenAttributes", "elementCount": 3, "version": "1.0" },
-      { "name": "nodes", "elementCount": 129, "idCounter": 128, "version": "1.0" },
+      {
+        "name": "nodes",
+        "elementCount": 129,
+        "idCounter": 128,
+        "version": "1.0"
+      },
       { "name": "networkAttributes", "elementCount": 6, "version": "1.0" },
       { "name": "cyTableColumn", "elementCount": 33, "version": "1.0" },
       { "name": "cartesianLayout", "elementCount": 129, "version": "1.0" },
       { "name": "edgeAttributes", "elementCount": 3553, "version": "1.0" },
-      { "name": "edges", "elementCount": 168, "idCounter": 266, "version": "1.0" },
+      {
+        "name": "edges",
+        "elementCount": 168,
+        "idCounter": 266,
+        "version": "1.0"
+      },
       { "name": "cyVisualProperties", "elementCount": 3, "version": "1.0" }
     ]
   },
@@ -428,8 +438,16 @@
       { "applies_to": "edge_table", "n": "Z", "d": "double" },
       { "applies_to": "edge_table", "n": "WD", "d": "double" },
       { "applies_to": "edge_table", "n": "Entropy", "d": "double" },
-      { "applies_to": "edge_table", "n": "Z_percentile_perBait", "d": "double" },
-      { "applies_to": "edge_table", "n": "WD_percentile_perBait", "d": "double" },
+      {
+        "applies_to": "edge_table",
+        "n": "Z_percentile_perBait",
+        "d": "double"
+      },
+      {
+        "applies_to": "edge_table",
+        "n": "WD_percentile_perBait",
+        "d": "double"
+      },
       { "applies_to": "edge_table", "n": "Spec" },
       { "applies_to": "edge_table", "n": "ctrlCounts" },
       { "applies_to": "edge_table", "n": "Saintscore", "d": "double" },
@@ -447,7 +465,11 @@
       { "applies_to": "edge_table", "n": "public ppi", "d": "boolean" },
       { "applies_to": "network_table", "n": "shared name" },
       { "applies_to": "network_table", "n": "name" },
-      { "applies_to": "network_table", "n": "__Annotations", "d": "list_of_string" }
+      {
+        "applies_to": "network_table",
+        "n": "__Annotations",
+        "d": "list_of_string"
+      }
     ]
   },
   {
@@ -5048,13 +5070,19 @@
           "NODE_Y_LOCATION": "0.0",
           "NODE_Z_LOCATION": "0.0"
         },
-        "dependencies": { "nodeCustomGraphicsSizeSync": "true", "nodeSizeLocked": "true" },
+        "dependencies": {
+          "nodeCustomGraphicsSizeSync": "true",
+          "nodeSizeLocked": "true"
+        },
         "mappings": {
           "NODE_FILL_COLOR": {
             "type": "DISCRETE",
             "definition": "COL=bait_boolean,T=boolean,K=0=true,V=0=#FFCC00"
           },
-          "NODE_LABEL": { "type": "PASSTHROUGH", "definition": "COL=name,T=string" },
+          "NODE_LABEL": {
+            "type": "PASSTHROUGH",
+            "definition": "COL=name,T=string"
+          },
           "NODE_LABEL_FONT_SIZE": {
             "type": "DISCRETE",
             "definition": "COL=bait_boolean,T=boolean,K=0=true,V=0=30"

@@ -1,12 +1,20 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Core, CytoscapeOptions } from 'cytoscape';
-import { CxAttributeNameMap, CxConverter } from 'ngx-cytoscapejs';
+import {
+  CxAttributeNameMap,
+  CxConverter,
+  CytoscapejsComponent,
+} from 'ngx-cytoscapejs';
 import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule, CytoscapejsComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   cytoscapeOptions!: CytoscapeOptions | null;
@@ -29,10 +37,9 @@ export class AppComponent {
 
   private cytoscapeJsonData!: CytoscapeOptions;
 
-  constructor(
-    private cd: ChangeDetectorRef,
-    private appService: AppService,
-  ) {}
+  private cd = inject(ChangeDetectorRef);
+
+  private appService = inject(AppService);
 
   coreChanged(core: Core): void {
     this.core = core;

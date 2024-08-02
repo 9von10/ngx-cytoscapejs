@@ -1,8 +1,7 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
 /dist
-/docs
 /tmp
 /out-tsc
 /bazel-out
@@ -37,8 +36,10 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-/.nx/cache
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Custom
+/docs

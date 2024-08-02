@@ -1,6 +1,6 @@
 {
   "name": "ngx-cytoscapejs",
-  "forwardPorts": [4200],
+  "forwardPorts": [4200, 8080],
   "customizations": {
     "vscode": {
       "extensions": [

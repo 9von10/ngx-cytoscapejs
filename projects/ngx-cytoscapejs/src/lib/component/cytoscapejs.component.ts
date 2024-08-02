@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
   OnChanges,
   OnDestroy,
@@ -21,10 +22,13 @@ import { CxService } from '../service/cx.service';
  */
 @Component({
   selector: 'cytoscapejs',
+  standalone: true,
   templateUrl: './cytoscapejs.component.html',
-  styleUrls: ['./cytoscapejs.component.scss'],
+  styleUrl: './cytoscapejs.component.scss',
 })
-export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy {
+export class CytoscapejsComponent
+  implements AfterViewInit, OnChanges, OnDestroy
+{
   /**
    * Object containing information about a graph. Must conform to [CytoscapeOptions]{@link https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/cytoscape/index.d.ts}. A specified container is ignored.
    * Should not be defined, if you are using {@link cxData} to build a graph.
@@ -56,7 +60,10 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
    * Arrange the converters in the order, in which they are to be executed, e.g. the first converter you specify will be tried first.
    * The first successful conversion result will be rendered.
    */
-  @Input() cxConverters: CxConverter[] = [CxConverter.cx2js, CxConverter.cxVizConverter];
+  @Input() cxConverters: CxConverter[] = [
+    CxConverter.cx2js,
+    CxConverter.cxVizConverter,
+  ];
 
   /**
    * Each time a new [Cytoscape.js core]{@link https://js.cytoscape.org/#core} is built, this output is firing an event containing the recent core.
@@ -99,11 +106,11 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
   /**
-   * Constructor
+   * Service responsible for conversion
    *
-   * @param {CxService} cxService Service responsible for conversion
+   * @internal
    */
-  constructor(private cxService: CxService) {}
+  private cxService = inject(CxService);
 
   /**
    * [Angular lifecycle]{@link https://angular.io/guide/lifecycle-hooks} which is called as soon as the view has been initialized.
@@ -187,7 +194,10 @@ export class CytoscapejsComponent implements AfterViewInit, OnChanges, OnDestroy
    */
   private render(options: CytoscapeOptions): void {
     if (options) {
-      this.core = cytoscape({ ...options, container: this.cyElementRef.nativeElement });
+      this.core = cytoscape({
+        ...options,
+        container: this.cyElementRef.nativeElement,
+      });
       this.core.fit();
       this.coreChanged.emit(this.core);
     }

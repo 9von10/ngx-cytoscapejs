@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CytoscapejsComponent } from './cytoscapejs.component';
 
 describe('CytoscapejsComponent', () => {
@@ -8,11 +7,9 @@ describe('CytoscapejsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CytoscapejsComponent],
+      imports: [CytoscapejsComponent],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(CytoscapejsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

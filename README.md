@@ -76,11 +76,7 @@ export class AppModule {}
 Add the cytoscapejs directive to your component's HTML:
 
 ```html
-<cytoscapejs
-  [cytoscapeOptions]="cytoscapeOptions"
-  [autoFit]="autoFit"
-  (coreChanged)="coreChanged($event)"
-></cytoscapejs>
+<cytoscapejs [cytoscapeOptions]="cytoscapeOptions" [autoFit]="autoFit" (coreChanged)="coreChanged($event)"></cytoscapejs>
 ```
 
 Configure the directive in your component:
